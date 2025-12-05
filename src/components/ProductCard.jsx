@@ -1,4 +1,4 @@
-export default function ProductCard({product}) {
+export default function ProductCard({product, onAddToCart}) {
     const {image, name, price} = product
 
     return (
@@ -8,8 +8,8 @@ export default function ProductCard({product}) {
             </div>
             <div className="product-body">
                 <h3 className="product-name">{name}</h3>
-                <p className="product-price">{price}</p>
-                <button className="btn-primary">Add to Cart</button>
+                <p className="product-price">£{price.toFixed(2)}</p>
+                <button className="btn-primary" onClick={() => onAddToCart(product)} >Add to Cart</button>
             </div>
         </div>
     )
